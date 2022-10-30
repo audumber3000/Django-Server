@@ -32,6 +32,10 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'Auth',
+    'rest_framework', # Third-Party Apps
+    'rest_framework.authtoken',# Third-Party Apps
+
+    'rest_framework_simplejwt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,20 +73,28 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.psycopg2-binary',
-        # 'NAME': os.environ["PGDATABASE"],
-        # 'USER': os.environ["PGUSER"],
-        # 'PASSWORD': os.environ["PGPASSWORD"],
-        # 'HOST': os.environ["PGHOST"],
-        # 'PORT': os.environ["PGPORT"],
+        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'sqlite3.db',  # Or path to database file if using sqlite3.
+        'USER': '',  # Not used with sqlite3.
+        'PASSWORD': '',  # Not used with sqlite3.
+        'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',
     }
 }
 
@@ -121,7 +133,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
