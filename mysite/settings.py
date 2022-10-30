@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'rest_framework', # Third-Party Apps
     'rest_framework.authtoken',# Third-Party Apps
 
-    'rest_framework_simplejwt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

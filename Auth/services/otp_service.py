@@ -23,6 +23,8 @@ def send_opt(mobile):
         'Cache-Control': "no-cache",
     }
 
+    #apply rate limiting
+
     response = requests.request("POST", url, data=payload, headers=headers)
 
     print(response.text)

@@ -38,10 +38,11 @@ class Login(APIView):
             if otp_response:
                 res = {
                     "status_code": 200,
+                    "status": "fail",
                     "data": {
                     "username": username,
                     },
-                    "message":"Creating new user"
+                    "message":"sorry no data available. please create an accoount."
                 }
 
 
