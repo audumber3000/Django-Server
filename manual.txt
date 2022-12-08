@@ -1,0 +1,3 @@
+Redis is implemeted in send_otp method.
+Remember --- redis key : "otp_7798121777"
+Next task : implement Verify OTP.

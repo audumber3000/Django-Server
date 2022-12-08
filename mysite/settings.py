@@ -83,6 +83,14 @@ REST_FRAMEWORK = {
 
 }
 
+#redis cacheß
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379"
+    }
+}
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -102,9 +110,9 @@ DATABASES = {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'railway',
        'USER': 'postgres',
-       'PASSWORD': 'FQqVDfwKEBHH9tCaj6fy',
-       'HOST': 'containers-us-west-103.railway.app',
-       'PORT': 6583
+       'PASSWORD': '8EpFaAHq29UtREVw8ao5',
+       'HOST': 'containers-us-west-43.railway.app',
+       'PORT': 6768
    }
 }
 
